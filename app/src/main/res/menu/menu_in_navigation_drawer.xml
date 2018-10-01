@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group1">
+        <item android:id="@+id/issued"
+            android:title="Issued"
+            android:icon="@drawable/ic_web_asset_black_24dp">
+        </item>
+        <item android:id="@+id/returned"
+            android:title="Returned"
+            android:icon="@drawable/ic_keyboard_return_black_24dp">
+        </item>
+        <item android:id="@+id/due"
+            android:title="Due"
+            android:icon="@drawable/ic_schedule_black_24dp">
+        </item>
+
+        <item
+            android:id="@+id/fine"
+            android:title="Fine"
+            android:icon="@drawable/ic_attach_money_black_24dp">
+        </item>
+
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/group2">
+
+        <item
+            android:id="@+id/reg_people"
+            android:title="Registerd People"
+            android:icon="@drawable/ic_people_outline_black_24dp">
+        </item>
+
+    </group>
+    <group>
+        <item
+            android:id="@+id/logout"
+            android:title="Log Out"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"/>
+    </group>
+</menu>

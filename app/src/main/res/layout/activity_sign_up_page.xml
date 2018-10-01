@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpPage">
+
+    <EditText
+        android:id="@+id/regName"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_alignEnd="@+id/regEmail"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="-1dp"
+        android:hint="Name"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/regEmail"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:hint="Email"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/regPass"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="190dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/confirm_pass"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/regName"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="260dp"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="160dp"
+        android:text="register" />
+
+</RelativeLayout>

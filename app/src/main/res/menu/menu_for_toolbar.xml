@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group1">
+        <item android:id="@+id/setting"
+            android:title="Setting"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/ic_settings_black_24dp">
+        </item>
+        <item android:id="@+id/account"
+            android:title="Account"
+            app:showAsAction="ifRoom">
+        </item>
+        <item android:id="@+id/invite"
+            android:title="Invite"
+            app:showAsAction="ifRoom">
+        </item>
+        <item android:id="@+id/help"
+            android:title="Help"
+            app:showAsAction="ifRoom">
+        </item>
+        <item android:id="@+id/info"
+            android:title="Info"
+            app:showAsAction="ifRoom">
+        </item>
+    </group>
+</menu>

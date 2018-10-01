@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/recyclerviewbg"
+    android:layout_height="160dp">
+
+
+    <TextView
+        android:id="@+id/bookName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bookname"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/authorName"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="40dp"
+        android:text="Author Name:"
+        android:textStyle="italic|bold"
+        android:textSize="15dp"
+        />
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="120dp"
+        android:textStyle="italic|bold"
+        android:text="Rating:"
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:textStyle="italic|bold"
+        android:layout_marginTop="80dp"
+        android:text="Issuer name:"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/duedate"
+        android:layout_width="75dp"
+        android:layout_height="20dp"
+        android:textStyle="italic|bold"
+        android:layout_alignBottom="@+id/rating"
+        android:layout_marginLeft="70dp"
+        android:layout_marginBottom="-1dp"
+        android:layout_toRightOf="@id/rating"
+        android:text="Due Date:"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+       android:layout_marginTop="40dp"
+        android:layout_toRightOf="@id/authorName"
+        android:textSize="15sp"
+        android:text="Cristie Agatha" />
+
+    <TextView
+        android:id="@+id/issuer"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="80dp"
+        android:layout_toRightOf="@id/authorName"
+        android:textSize="15sp"
+        android:text="Cristiano Ronaldo" />
+
+    <TextView
+        android:id="@+id/rate"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="120dp"
+        android:layout_toRightOf="@id/rating"
+        android:textSize="15sp"
+        android:text="4.5" />
+    <TextView
+        android:id="@+id/duedatevalue"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="120dp"
+        android:layout_toRightOf="@id/duedate"
+        android:textSize="15sp"
+        android:text="29-7-2018" />
+
+</RelativeLayout>

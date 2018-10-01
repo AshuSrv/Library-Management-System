@@ -25,9 +25,12 @@
         <activity android:name=".SignUpPage" />
         <activity android:name=".IssuedSection" />
         <activity android:name=".ReturnSection" />
-        <activity android:name=".DueSection" />
         <activity android:name=".FineSection" />
-        <activity android:name=".RegisterdPeopleSection"></activity>
+        <activity android:name=".RegisterdPeopleSection" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".AccountActivity" />
+        <activity android:name=".HelpActicity" />
+        <activity android:name=".AddBookToDatabase"></activity>
     </application>
 
 </manifest>

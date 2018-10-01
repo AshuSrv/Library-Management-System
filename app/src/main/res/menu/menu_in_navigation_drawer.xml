@@ -12,10 +12,6 @@
             android:title="Returned"
             android:icon="@drawable/ic_keyboard_return_black_24dp">
         </item>
-        <item android:id="@+id/due"
-            android:title="Due"
-            android:icon="@drawable/ic_schedule_black_24dp">
-        </item>
 
         <item
             android:id="@+id/fine"

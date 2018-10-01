@@ -22,7 +22,7 @@
         android:layout_marginTop="40dp"
         android:text="Author Name:"
         android:textStyle="italic|bold"
-        android:textSize="15dp"
+        android:textSize="15sp"
         />
 
     <TextView
@@ -32,7 +32,7 @@
         android:layout_marginTop="120dp"
         android:textStyle="italic|bold"
         android:text="Rating:"
-        android:textSize="15dp" />
+        android:textSize="15sp" />
 
     <TextView
         android:layout_width="100dp"
@@ -40,19 +40,19 @@
         android:textStyle="italic|bold"
         android:layout_marginTop="80dp"
         android:text="Issuer name:"
-        android:textSize="15dp" />
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/duedate"
-        android:layout_width="75dp"
+        android:layout_width="82dp"
         android:layout_height="20dp"
         android:textStyle="italic|bold"
         android:layout_alignBottom="@+id/rating"
         android:layout_marginLeft="70dp"
         android:layout_marginBottom="-1dp"
         android:layout_toRightOf="@id/rating"
-        android:text="Due Date:"
-        android:textSize="15dp" />
+        android:text="Issue Date:"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/author"

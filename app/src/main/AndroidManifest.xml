@@ -30,7 +30,9 @@
         <activity android:name=".SettingActivity" />
         <activity android:name=".AccountActivity" />
         <activity android:name=".HelpActicity" />
-        <activity android:name=".AddBookToDatabase"></activity>
+        <activity android:name=".AddBookToDatabase" />
+        <activity android:name=".ReissueSection" />
+        <activity android:name=".ForgotPasswordActicity"></activity>
     </application>
 
 </manifest>

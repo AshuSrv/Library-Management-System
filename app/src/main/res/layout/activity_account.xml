@@ -8,47 +8,86 @@
     tools:layout_editor_absoluteY="81dp">
 
     <TextView
-        android:id="@+id/emailid"
-        android:layout_width="186dp"
-        android:layout_height="41dp"
+        android:id="@+id/accountactivityemailid"
+        android:layout_width="284dp"
+        android:layout_height="45dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:textAlignment="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="33dp"
         android:text="Email ID"
+        android:textAlignment="center"
         android:textSize="20sp"
         tools:layout_editor_absoluteY="47dp" />
 
     <TextView
-        android:id="@+id/Password"
-        android:layout_width="186dp"
-        android:layout_height="41dp"
-        android:textAlignment="center"
+        android:id="@+id/accountactivityPassword"
+        android:layout_width="284dp"
+        android:layout_height="45dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="100dp"
+        android:inputType="textPassword"
         android:text="Password"
+        android:textAlignment="center"
         android:textSize="20sp"
         tools:layout_editor_absoluteY="126dp" />
 
     <Button
-        android:id="@+id/changeemail"
-        android:layout_width="wrap_content"
+        android:id="@+id/changepass"
+        android:layout_width="156dp"
         android:layout_height="wrap_content"
-        android:layout_marginRight="50dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="194dp"
         android:text="Change" />
 
-    <Button
-        android:id="@+id/changepass"
+    <EditText
+        android:id="@+id/DynamicParameter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="189dp"
+        android:ems="10"
+        android:hint="Enter new value"
+        android:inputType="textPassword"
+        android:text=""
+        android:textAlignment="center"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/Updateparameter"
+        android:layout_width="166dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="101dp"
+        android:text="Update"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="150dp"
-        android:text="Change" />
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_marginTop="33dp"
+        android:text="Email Id :" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:textSize="20dp"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="100dp"
+        android:text="Password :" />
 
 </RelativeLayout>

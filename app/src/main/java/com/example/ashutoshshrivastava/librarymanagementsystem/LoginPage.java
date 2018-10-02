@@ -37,13 +37,21 @@ public class LoginPage extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+        forgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(LoginPage.this,ForgotPasswordActicity.class);
+                startActivity(intent);
+            }
+        });
 
 
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Email = email.getText().toString().trim();
-                String Passwd = password.getText().toString().trim();
+                final String Email = email.getText().toString().trim();
+                final String Passwd = password.getText().toString().trim();
+
                 if (Email.compareTo("") == 0 || Passwd.compareTo("") == 0) {
                     Toast.makeText(LoginPage.this, "Please enter in both the fields", Toast.LENGTH_SHORT).show();
 
@@ -55,9 +63,12 @@ public class LoginPage extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
+
                                         // Sign in success, update UI with the signed-in user's information
                                         FirebaseUser user = firebaseAuth.getCurrentUser();
-                                        Intent intent = new Intent(LoginPage.this, HomePage.class);
+                                       Intent intent = new Intent(LoginPage.this, HomePage.class);
+                                        intent.putExtra("passEmail",Email);
+                                        intent.putExtra("passPassword",Passwd);
                                         startActivity(intent);
                                         finish();
 

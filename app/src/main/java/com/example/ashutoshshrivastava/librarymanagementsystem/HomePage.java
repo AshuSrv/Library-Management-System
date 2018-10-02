@@ -24,6 +24,8 @@ public class HomePage extends AppCompatActivity {
 TextView textView;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,10 @@ TextView textView;
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
        ActionBar actionBar = getSupportActionBar();
+
+
+
+
         actionBar.setDisplayHomeAsUpEnabled(true);
        actionBar.setHomeAsUpIndicator(R.drawable.menu);
        textView=findViewById(R.id.textmm);
@@ -76,6 +82,12 @@ TextView textView;
                         intent=new Intent(HomePage.this,RegisterdPeopleSection.class);
                         startActivity(intent);
                         break;
+
+                    case R.id.Reissue:
+                        intent=new Intent(HomePage.this,ReissueSection.class);
+                        startActivity(intent);
+                        break;
+
                     case R.id.logout:
                       firebaseAuth.getInstance().signOut();
                       intent=new Intent(HomePage.this,LoginPage.class);
@@ -98,13 +110,19 @@ TextView textView;
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        Intent intent=getIntent();
+        String recEmail = intent.getStringExtra("passEmail");
+        String recpassword = intent.getStringExtra("passPassword");
         switch (item.getItemId()) {
             case android.R.id.home:
                 drawerLayout.openDrawer(Gravity.START);
                 break;
 
             case R.id.account:
-                Intent intent=new Intent(HomePage.this,AccountActivity.class);
+                intent=new Intent(HomePage.this,AccountActivity.class);
+                intent.putExtra("passEmail", recEmail);
+                intent.putExtra("passPassword",recpassword);
                 startActivity(intent);
                 break;
 

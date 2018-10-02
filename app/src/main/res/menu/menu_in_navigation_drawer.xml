@@ -12,7 +12,11 @@
             android:title="Returned"
             android:icon="@drawable/ic_keyboard_return_black_24dp">
         </item>
-
+        <item
+            android:id="@+id/Reissue"
+            android:title="Reissue"
+            android:icon="@drawable/ic_refresh_black_24dp">
+        </item>
         <item
             android:id="@+id/fine"
             android:title="Fine"

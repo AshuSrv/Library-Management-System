@@ -11,13 +11,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".LoginPage">
+        <activity android:name=".SplaashScreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".powerConnection">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name=".HomePage"
             android:label="Home"
@@ -27,12 +37,12 @@
         <activity android:name=".ReturnSection" />
         <activity android:name=".FineSection" />
         <activity android:name=".RegisterdPeopleSection" />
-        <activity android:name=".SettingActivity" />
         <activity android:name=".AccountActivity" />
         <activity android:name=".HelpActicity" />
         <activity android:name=".AddBookToDatabase" />
         <activity android:name=".ReissueSection" />
-        <activity android:name=".ForgotPasswordActicity"></activity>
+        <activity android:name=".ForgotPasswordActicity" />
+        <activity android:name=".LoginPage"></activity>
     </application>
 
 </manifest>

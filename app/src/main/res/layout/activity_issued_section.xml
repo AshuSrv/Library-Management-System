@@ -4,7 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IssuedSection">
+    tools:context=".ReturnSection">
+
+
+    <EditText
+        android:id="@+id/InitialIssuesearchtext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="21dp"
+        android:ems="10"
+        android:hint="Search the name of the book"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/initialissuesearchbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp"
+        android:text="Search" />
+
+    <Button
+        android:id="@+id/initialissueupdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="440dp"
+        android:text="Update to Issued" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_issue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/initialissuesearchbutton"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="40dp"
+        android:scrollbars="vertical" />
+
+    <EditText
+        android:id="@+id/initialissuername"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="Enter Issuer Name"
+        android:layout_marginTop="380dp"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
 
 
 </RelativeLayout>

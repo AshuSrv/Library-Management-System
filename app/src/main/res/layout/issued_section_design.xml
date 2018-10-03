@@ -42,7 +42,7 @@
         android:layout_height="20dp"
         android:textStyle="italic|bold"
         android:layout_marginTop="80dp"
-        android:text="  Issuer By:"
+        android:text="  Issued By:"
         android:textSize="15sp" />
 
     <TextView

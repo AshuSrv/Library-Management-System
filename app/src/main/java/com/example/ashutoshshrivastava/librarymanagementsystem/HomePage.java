@@ -1,6 +1,7 @@
 package com.example.ashutoshshrivastava.librarymanagementsystem;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -38,7 +39,7 @@ TextView textView;
     RecyclerView recyclerView;
     ArrayList<Books> list;
     BooksViewAdapter adapter;
-
+     powerConnection receiver = new powerConnection();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,6 +122,22 @@ TextView textView;
 
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterReceiver(receiver);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        IntentFilter ifilter = new IntentFilter();
+        ifilter.addAction(Intent.ACTION_POWER_CONNECTED);
+        ifilter.addAction(Intent.ACTION_POWER_DISCONNECTED);
+        registerReceiver(receiver, ifilter);
+
+    }
 
     @Override
     protected void onStart() {

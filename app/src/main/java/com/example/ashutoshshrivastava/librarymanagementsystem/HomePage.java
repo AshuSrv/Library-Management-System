@@ -9,14 +9,24 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class HomePage extends AppCompatActivity {
     FloatingActionButton fab ;
@@ -24,7 +34,10 @@ public class HomePage extends AppCompatActivity {
 TextView textView;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
-
+    DatabaseReference databaseBooks;
+    RecyclerView recyclerView;
+    ArrayList<Books> list;
+    BooksViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +47,15 @@ TextView textView;
         setSupportActionBar(myToolbar);
        ActionBar actionBar = getSupportActionBar();
 
-
+        recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        databaseBooks = FirebaseDatabase.getInstance().getReference().child("books");
+        list=new ArrayList<Books>();
 
 
         actionBar.setDisplayHomeAsUpEnabled(true);
        actionBar.setHomeAsUpIndicator(R.drawable.menu);
-       textView=findViewById(R.id.textmm);
         drawerLayout = findViewById(R.id.my_drwawer);
         navigationView = findViewById(R.id.nav);
         fab = findViewById(R.id.fab);
@@ -104,6 +120,31 @@ TextView textView;
 
 
     }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        databaseBooks.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                list.clear();
+                for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren())
+                {
+                    Books books=dataSnapshot1.getValue(Books.class);
+                    list.add(books);
+                }
+                adapter=new BooksViewAdapter(HomePage.this, list);
+                recyclerView.setAdapter(adapter);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(HomePage.this,"Error",Toast.LENGTH_SHORT).show();;
+            }
+        });
+    }
+
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_for_toolbar, menu);
         return true;
@@ -148,5 +189,7 @@ TextView textView;
         super.onOptionsItemSelected(item);
         return true;
     }
+
+
 
 }

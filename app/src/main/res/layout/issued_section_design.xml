@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@drawable/recyclerviewbg"
@@ -12,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Bookname"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -21,6 +22,7 @@
         android:layout_height="20dp"
         android:layout_marginTop="40dp"
         android:text="Author Name:"
+        android:textAlignment="center"
         android:textStyle="italic|bold"
         android:textSize="15sp"
         />
@@ -30,6 +32,7 @@
         android:layout_width="60dp"
         android:layout_height="20dp"
         android:layout_marginTop="120dp"
+        android:textAlignment="center"
         android:textStyle="italic|bold"
         android:text="Rating:"
         android:textSize="15sp" />
@@ -39,24 +42,25 @@
         android:layout_height="20dp"
         android:textStyle="italic|bold"
         android:layout_marginTop="80dp"
-        android:text="Issuer name:"
+        android:text="  Issuer By:"
         android:textSize="15sp" />
 
     <TextView
         android:id="@+id/duedate"
-        android:layout_width="82dp"
+        android:layout_width="60dp"
         android:layout_height="20dp"
         android:textStyle="italic|bold"
+        android:textAlignment="center"
         android:layout_alignBottom="@+id/rating"
-        android:layout_marginLeft="70dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginBottom="-1dp"
         android:layout_toRightOf="@id/rating"
-        android:text="Issue Date:"
+        android:text="Genre :"
         android:textSize="15sp" />
 
     <TextView
         android:id="@+id/author"
-        android:layout_width="250dp"
+        android:layout_width="180dp"
         android:layout_height="20dp"
        android:layout_marginTop="40dp"
         android:layout_toRightOf="@id/authorName"
@@ -65,7 +69,7 @@
 
     <TextView
         android:id="@+id/issuer"
-        android:layout_width="250dp"
+        android:layout_width="180dp"
         android:layout_height="20dp"
         android:layout_marginTop="80dp"
         android:layout_toRightOf="@id/authorName"
@@ -81,12 +85,22 @@
         android:textSize="15sp"
         android:text="4.5" />
     <TextView
-        android:id="@+id/duedatevalue"
+        android:id="@+id/genreValue"
         android:layout_width="100dp"
         android:layout_height="20dp"
         android:layout_marginTop="120dp"
         android:layout_toRightOf="@id/duedate"
         android:textSize="15sp"
-        android:text="29-7-2018" />
+        android:text="Horror,Crime" />
+
+    <ImageView
+        android:id="@+id/coverPic"
+        android:layout_width="99dp"
+        android:layout_height="147dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/author"
+        app:srcCompat="@mipmap/ic_launcher" />
 
 </RelativeLayout>

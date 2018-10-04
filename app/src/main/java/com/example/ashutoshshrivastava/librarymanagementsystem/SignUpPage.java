@@ -39,12 +39,19 @@ public class SignUpPage extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String emailText = regEmail.getText().toString();
-                String passwordText = regPass.getText().toString();
-                String retypedPassText = confPass.getText().toString();
+                String name=regName.getText().toString().trim();
+                String CapemailText = regEmail.getText().toString().trim();
+                 String  emailText =CapemailText.toLowerCase();
+                String passwordText = regPass.getText().toString().trim();
+                String retypedPassText = confPass.getText().toString().trim();
+
 
                 if (passwordText.equals(retypedPassText)) {
                     performSignup(emailText, passwordText);
+
+                    Intent intent=new Intent(SignUpPage.this,LoginPage.class);
+                    intent.putExtra("name",name);
+                    startActivity(intent);
                 } else {
                     showError("Please enter same password");
                 }

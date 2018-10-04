@@ -59,7 +59,7 @@ public class ReturnSection extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String searchNameText=searchName.getText().toString();
+                String searchNameText=searchName.getText().toString().trim();
                 list.clear();
 
 

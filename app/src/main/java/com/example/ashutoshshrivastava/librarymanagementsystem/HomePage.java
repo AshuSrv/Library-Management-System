@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
@@ -25,6 +26,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -37,6 +39,9 @@ TextView textView;
     NavigationView navigationView;
     DatabaseReference databaseBooks;
     RecyclerView recyclerView;
+
+    public String key;
+
     ArrayList<Books> list;
     BooksViewAdapter adapter;
      powerConnection receiver = new powerConnection();
@@ -47,6 +52,9 @@ TextView textView;
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
        ActionBar actionBar = getSupportActionBar();
+
+
+
 
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -91,10 +99,6 @@ TextView textView;
                         startActivity(intent);
                         break;
 
-                    case R.id.fine:
-                        intent=new Intent(HomePage.this,FineSection.class);
-                        startActivity(intent);
-                        break;
                     case R.id.reg_people:
                         intent=new Intent(HomePage.this,RegisterdPeopleSection.class);
                         startActivity(intent);
@@ -139,6 +143,8 @@ TextView textView;
 
     }
 
+
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -154,6 +160,7 @@ TextView textView;
                 }
                 adapter=new BooksViewAdapter(HomePage.this, list);
                 recyclerView.setAdapter(adapter);
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -164,6 +171,129 @@ TextView textView;
 
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_for_toolbar, menu);
+
+        MenuItem mSearch = menu.findItem(R.id.action_search);
+        SearchView mSearchView = (SearchView) mSearch.getActionView();
+
+
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(final String query) {
+
+//                Query querrytosearch=FirebaseDatabase.getInstance().getReference("books").orderByChild("genreText").equalTo(query);
+//                searchBook(querrytosearch);
+//                Query query1=FirebaseDatabase.getInstance().getReference("books").orderByChild("authorText").equalTo(query);
+//                searchBook(query1);
+//                Query query2=FirebaseDatabase.getInstance().getReference("books").orderByChild("ratingText").equalTo(query);
+//                searchBook(query2);
+
+           final String NewQuerry=query.toLowerCase();
+
+
+                databaseBooks.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        if (dataSnapshot.exists()) {
+
+                            list.clear();
+                            for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+
+                                key = dataSnapshot1.getKey();
+
+                                Books books = dataSnapshot1.getValue(Books.class);
+                                String recievedName=books.booknameText;
+                                recievedName=recievedName.toLowerCase();
+                                String recievedAuthor=books.authorText;
+                                recievedAuthor=recievedAuthor.toLowerCase();
+                                String recievedRating=books.ratingText;
+                                recievedRating=recievedRating.toLowerCase();
+                                if(recievedName.contains(NewQuerry))
+                                    list.add(books);
+
+                                else if(recievedAuthor.contains(NewQuerry))
+                                    list.add(books);
+
+                                else if(recievedRating.contains(NewQuerry))
+                                    list.add(books);
+
+
+                            }
+                        }
+                        adapter = new BooksViewAdapter(HomePage.this, list);
+                        recyclerView.setAdapter(adapter);
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+//                Query query1=FirebaseDatabase.getInstance().getReference("books").orderByChild("genreText").equalTo(newText);
+//                searchBook(query1);
+//                Query query2=FirebaseDatabase.getInstance().getReference("books").orderByChild("ratingText").equalTo(newText);
+//                searchBook(query2);
+                final String NewQuerry=newText.toLowerCase();
+
+
+                databaseBooks.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        if (dataSnapshot.exists()) {
+
+                            list.clear();
+                            for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+
+                                key = dataSnapshot1.getKey();
+
+                                Books books = dataSnapshot1.getValue(Books.class);
+                                String recievedName=books.booknameText;
+                                recievedName=recievedName.toLowerCase();
+                                String recievedAuthor=books.authorText;
+                                recievedAuthor=recievedAuthor.toLowerCase();
+                                String recievedRating=books.ratingText;
+                                recievedRating=recievedRating.toLowerCase();
+                                if(recievedName.contains(NewQuerry))
+                                    list.add(books);
+
+                                else if(recievedAuthor.contains(NewQuerry))
+                                    list.add(books);
+
+                                else if(recievedRating.contains(NewQuerry))
+                                    list.add(books);
+
+
+                            }
+                        }
+                        adapter = new BooksViewAdapter(HomePage.this, list);
+                        recyclerView.setAdapter(adapter);
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+
+
+                return false;
+            }
+        });
+
+
         return true;
     }
 
@@ -176,6 +306,14 @@ TextView textView;
             case android.R.id.home:
                 drawerLayout.openDrawer(Gravity.START);
                 break;
+
+
+
+            case R.id.action_search:
+
+                break;
+
+
 
             case R.id.account:
                 intent=new Intent(HomePage.this,AccountActivity.class);
@@ -206,6 +344,49 @@ TextView textView;
         super.onOptionsItemSelected(item);
         return true;
     }
+
+
+//
+//
+//    public void searchBook(final Query value)
+//    {
+//
+//
+//        value.addListenerForSingleValueEvent(new ValueEventListener() {
+//
+//
+//
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                if(dataSnapshot.exists())
+//                {
+//                    list.clear();
+//
+//                    for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren())
+//                    {
+//
+//                        key = dataSnapshot1.getKey();
+//
+//                        Books books = dataSnapshot1.getValue(Books.class);
+//                            list.add(books);
+//
+//                    }
+//                }
+//                adapter=new BooksViewAdapter(HomePage.this, list);
+//                recyclerView.setAdapter(adapter);
+//
+//
+//
+//            }
+//
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                Toast.makeText(HomePage.this,"Error",Toast.LENGTH_SHORT).show();;
+//
+//            }
+//        });
+//    }
 
 
 

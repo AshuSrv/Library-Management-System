@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BooksViewAdapter extends RecyclerView.Adapter<BooksViewHolder> {
@@ -39,7 +40,7 @@ public class BooksViewAdapter extends RecyclerView.Adapter<BooksViewHolder> {
         booksViewHolder.genreValue.setText((booklist).get(i).genreText);
         Picasso.get().load(booklist.get(i).getCoverPicTextURL()).into(booksViewHolder.coverPic);
         booksViewHolder.issuer.setText(booklist.get(i).issuerText);
-
+        booksViewHolder.status.setText(booklist.get(i).statusText);
     }
 
     @Override

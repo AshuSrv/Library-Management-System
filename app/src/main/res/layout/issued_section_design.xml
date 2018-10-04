@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/recyclerviewbg"
+    android:background="@drawable/bacgroundtheme"
     android:layout_height="160dp">
 
 
@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Bookname"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -23,49 +24,67 @@
         android:layout_marginTop="40dp"
         android:text="Author Name:"
         android:textAlignment="center"
-        android:textStyle="italic|bold"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="15sp"
-        />
+        android:textStyle="italic|bold" />
 
     <TextView
         android:id="@+id/rating"
         android:layout_width="60dp"
         android:layout_height="20dp"
         android:layout_marginTop="120dp"
-        android:textAlignment="center"
-        android:textStyle="italic|bold"
         android:text="Rating:"
-        android:textSize="15sp" />
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="15sp"
+        android:textStyle="italic|bold" />
 
     <TextView
         android:layout_width="100dp"
         android:layout_height="20dp"
-        android:textStyle="italic|bold"
         android:layout_marginTop="80dp"
         android:text="  Issued By:"
-        android:textSize="15sp" />
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="15sp"
+        android:textStyle="italic|bold" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_alignTop="@+id/rating"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/statusofthebook"
+        android:textAlignment="center"
+        android:layout_marginEnd="0dp"
+        android:text="Issued"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/duedate"
         android:layout_width="60dp"
         android:layout_height="20dp"
-        android:textStyle="italic|bold"
-        android:textAlignment="center"
         android:layout_alignBottom="@+id/rating"
         android:layout_marginLeft="50dp"
         android:layout_marginBottom="-1dp"
         android:layout_toRightOf="@id/rating"
         android:text="Genre :"
-        android:textSize="15sp" />
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="15sp"
+        android:textStyle="italic|bold" />
 
     <TextView
         android:id="@+id/author"
         android:layout_width="180dp"
         android:layout_height="20dp"
-       android:layout_marginTop="40dp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
         android:layout_toRightOf="@id/authorName"
-        android:textSize="15sp"
-        android:text="Cristie Agatha" />
+        android:text="Cristie Agatha"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/issuer"
@@ -73,30 +92,37 @@
         android:layout_height="20dp"
         android:layout_marginTop="80dp"
         android:layout_toRightOf="@id/authorName"
-        android:textSize="15sp"
-        android:text="Cristiano Ronaldo" />
+        android:textStyle="bold"
+        android:text="Cristiano Ronaldo"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/rate"
         android:layout_width="30dp"
         android:layout_height="20dp"
+        android:textStyle="bold"
         android:layout_marginTop="120dp"
         android:layout_toRightOf="@id/rating"
-        android:textSize="15sp"
-        android:text="4.5" />
+        android:text="4.5"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="15sp" />
+
     <TextView
         android:id="@+id/genreValue"
         android:layout_width="100dp"
         android:layout_height="20dp"
         android:layout_marginTop="120dp"
+        android:textStyle="bold"
         android:layout_toRightOf="@id/duedate"
-        android:textSize="15sp"
-        android:text="Horror,Crime" />
+        android:text="Horror,Crime"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="15sp" />
 
     <ImageView
         android:id="@+id/coverPic"
         android:layout_width="99dp"
-        android:layout_height="147dp"
+        android:layout_height="101dp"
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="0dp"

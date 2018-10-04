@@ -60,7 +60,7 @@ public class ReissueSection extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String searchNameText=searchNamereissue.getText().toString();
+                String searchNameText=searchNamereissue.getText().toString().trim();
                 list.clear();
 
 

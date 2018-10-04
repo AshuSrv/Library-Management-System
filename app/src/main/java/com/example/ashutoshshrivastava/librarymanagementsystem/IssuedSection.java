@@ -58,7 +58,7 @@ public class IssuedSection extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String searchNameText=searchNamereissue.getText().toString();
+                String searchNameText=searchNamereissue.getText().toString().trim();
                 list.clear();
 
 
@@ -108,7 +108,7 @@ public class IssuedSection extends AppCompatActivity {
         updatereissue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name=reissuerNme.getText().toString();
+                String name=reissuerNme.getText().toString().trim();
                 Toast.makeText(IssuedSection.this,"Values Updated",Toast.LENGTH_LONG).show();
                 databaseBooks.child(key).child("statusText").setValue("Issued");
                 databaseBooks.child(key).child("issuerText").setValue(name);

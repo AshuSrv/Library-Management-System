@@ -17,11 +17,6 @@
             android:title="Reissue"
             android:icon="@drawable/ic_refresh_black_24dp">
         </item>
-        <item
-            android:id="@+id/fine"
-            android:title="Fine"
-            android:icon="@drawable/ic_attach_money_black_24dp">
-        </item>
 
     </group>
     <group android:checkableBehavior="single"

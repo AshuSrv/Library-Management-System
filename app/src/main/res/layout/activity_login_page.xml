@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginPage"
+    android:background="@drawable/mn"
     tools:layout_editor_absoluteY="81dp">
 
     <EditText
@@ -12,10 +13,10 @@
         android:layout_width="315dp"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/toSignIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
 
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="-55dp"
+        android:layout_marginEnd="-60dp"
         android:hint="Email"
         android:textAlignment="center" />
 
@@ -23,10 +24,8 @@
         android:id="@+id/password"
         android:layout_width="315dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="135dp"
+        android:layout_alignEnd="@+id/email"
+        android:layout_marginTop="90dp"
         android:hint="Password"
         android:inputType="textPassword"
         android:textAlignment="center" />
@@ -46,8 +45,8 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_alignTop="@+id/password"
-        android:layout_marginStart="-31dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginStart="-29dp"
+        android:layout_marginTop="6dp"
         android:layout_toEndOf="@+id/emailPhoto"
         app:srcCompat="@drawable/ic_vpn_key_black_24dp" />
 

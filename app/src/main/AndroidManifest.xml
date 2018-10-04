@@ -5,7 +5,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/appicon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -35,7 +35,6 @@
         <activity android:name=".SignUpPage" />
         <activity android:name=".IssuedSection" />
         <activity android:name=".ReturnSection" />
-        <activity android:name=".FineSection" />
         <activity android:name=".RegisterdPeopleSection" />
         <activity android:name=".AccountActivity" />
         <activity android:name=".HelpActicity" />

@@ -49,7 +49,8 @@ public class LoginPage extends AppCompatActivity {
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String Email = email.getText().toString().trim();
+                final String CapEmail = email.getText().toString().trim();
+                final String Email=CapEmail.toLowerCase();
                 final String Passwd = password.getText().toString().trim();
 
                 if (Email.compareTo("") == 0 || Passwd.compareTo("") == 0) {
@@ -123,7 +124,7 @@ public class LoginPage extends AppCompatActivity {
         } else {
 
             this.doubleBackToExitPressedOnce = true;
-            Toast.makeText(this, "Please click BACK again to SignOut", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please click BACK again to Quit", Toast.LENGTH_SHORT).show();
 
             new Handler().postDelayed(new Runnable() {
 

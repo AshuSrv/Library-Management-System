@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 public class BooksViewHolder extends RecyclerView.ViewHolder {
 
-    TextView author,issuer,rate,genreValue,bookName;
+    TextView author,issuer,rate,genreValue,bookName,status;
     ImageView coverPic;
 
     public BooksViewHolder(View itemView) {
@@ -18,5 +18,7 @@ public class BooksViewHolder extends RecyclerView.ViewHolder {
         genreValue=itemView.findViewById(R.id.genreValue);
         bookName=itemView.findViewById(R.id.bookName);
         coverPic=itemView.findViewById(R.id.coverPic);
+        status=itemView.findViewById(R.id.statusofthebook);
+
     }
 }

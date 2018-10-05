@@ -42,38 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="Cards of books due today
-Floating action button
-FinedBooks.java=fine
-Cards of books bearing fine
-Floating action button
-RegPeople.java
-recycler view of people registered in the library
-Floating action button
-Settings.java=settings list view
-change colour of background etc
-About=context menu
-Developers github link
-Ip address connected using retrofit
-No of days borrower can keep the book
-Account.java=account textview
-Username
-Password
-Email
-Number
-Tot no of admin
-Pass change
-Help.java=help
-Instructions to use
-AddBooks.java
-Book name
-Published
-Author
-Status
-Info popup menu
-Tot no of issued books
-Tot no of due books
-Tot no reg people"/>
+                android:text="hgjgj"/>
 
 
         </LinearLayout>

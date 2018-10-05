@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/mn"
     tools:context=".SignUpPage">
 
     <EditText
         android:id="@+id/regName"
         android:layout_width="280dp"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:layout_alignEnd="@+id/regEmail"
         android:layout_alignParentTop="true"
         android:layout_marginTop="50dp"
@@ -20,7 +21,7 @@
     <EditText
         android:id="@+id/regEmail"
         android:layout_width="280dp"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="120dp"
@@ -30,7 +31,7 @@
     <EditText
         android:id="@+id/regPass"
         android:layout_width="280dp"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="190dp"
@@ -41,7 +42,7 @@
     <EditText
         android:id="@+id/confirm_pass"
         android:layout_width="280dp"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:layout_alignStart="@+id/regName"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"

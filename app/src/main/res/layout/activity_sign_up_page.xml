@@ -28,13 +28,25 @@
         android:hint="Email"
         android:textAlignment="center" />
 
+
+    <EditText
+        android:id="@+id/MobNumber"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:inputType="number"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="190dp"
+        android:hint="Mobile Number"
+        android:textAlignment="center" />
+
     <EditText
         android:id="@+id/regPass"
         android:layout_width="280dp"
         android:layout_height="45dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="260dp"
         android:hint="Password"
         android:inputType="textPassword"
         android:textAlignment="center" />
@@ -46,7 +58,7 @@
         android:layout_alignStart="@+id/regName"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="330dp"
         android:hint="Confirm Password"
         android:inputType="textPassword"
         android:textAlignment="center" />
@@ -57,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="160dp"
+        android:layout_marginBottom="71dp"
         android:text="register" />
 
 </RelativeLayout>

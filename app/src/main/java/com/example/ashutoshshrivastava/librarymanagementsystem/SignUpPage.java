@@ -17,12 +17,16 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpPage extends AppCompatActivity {
 
-    EditText regName,regEmail,regPass,confPass;
+    EditText regName,regEmail,regPass,confPass,mobnumber;
     Button register;
     private FirebaseAuth firebaseAuth;
+
+    DatabaseReference databaseBooks;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +37,10 @@ public class SignUpPage extends AppCompatActivity {
         regPass=findViewById(R.id.regPass);
         confPass=findViewById(R.id.confirm_pass);
         register=findViewById(R.id.register);
+        mobnumber=findViewById(R.id.MobNumber);
+
+        databaseBooks=FirebaseDatabase.getInstance().getReference("Users");
+        databaseBooks.keepSynced(true);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -44,16 +52,23 @@ public class SignUpPage extends AppCompatActivity {
                  String  emailText =CapemailText.toLowerCase();
                 String passwordText = regPass.getText().toString().trim();
                 String retypedPassText = confPass.getText().toString().trim();
+                String mobnumberText = mobnumber.getText().toString().trim();
 
-
-                if (passwordText.equals(retypedPassText)) {
+                if (passwordText.equals(retypedPassText)&&name.compareTo("")!=0&&emailText.compareTo("")!=0&&mobnumberText.compareTo("")!=0) {
                     performSignup(emailText, passwordText);
+
+                    String id=databaseBooks.push().getKey();
+                    UsersClass usersClass=new
+                            UsersClass(name,emailText,mobnumberText);
+                    databaseBooks.child(id).setValue(usersClass);
+
+                    Toast.makeText(SignUpPage.this,"User Added",Toast.LENGTH_SHORT).show();
 
                     Intent intent=new Intent(SignUpPage.this,LoginPage.class);
                     intent.putExtra("name",name);
                     startActivity(intent);
                 } else {
-                    showError("Please enter same password");
+                    showError("Please enter same password and enter all the fields");
                 }
             }
         });

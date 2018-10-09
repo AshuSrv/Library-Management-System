@@ -11,9 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SplaashScreen"
+        <activity
+            android:name=".SplaashScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,7 +41,8 @@
         <activity android:name=".AddBookToDatabase" />
         <activity android:name=".ReissueSection" />
         <activity android:name=".ForgotPasswordActicity" />
-        <activity android:name=".LoginPage"></activity>
+        <activity android:name=".LoginPage" />
+        <activity android:name=".IssuedBooks"></activity>
     </application>
 
 </manifest>

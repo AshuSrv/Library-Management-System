@@ -39,7 +39,7 @@ public class AddBookToDatabase extends AppCompatActivity {
             public void onClick(View v) {
                 String booknameText=bookName.getText().toString().trim();
                 String authorText=authorName.getText().toString().trim();
-                String issuerText="Null";
+                String issuerText="N/A";
                 String ratingText=rating.getText().toString().trim();
                 String coverPicTextURL=url.getText().toString().trim();
                 String statusText="Available";

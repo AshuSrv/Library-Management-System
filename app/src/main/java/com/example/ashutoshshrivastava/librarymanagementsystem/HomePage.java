@@ -90,7 +90,7 @@ TextView textView;
                 switch (item.getItemId()) {
 
                     case R.id.issued:
-                        Intent intent=new Intent(HomePage.this,IssuedSection.class);
+                        Intent intent=new Intent(HomePage.this,IssuedBooks.class);
                         startActivity(intent);
                         break;
 

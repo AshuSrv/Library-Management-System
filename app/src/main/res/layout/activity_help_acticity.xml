@@ -22,27 +22,51 @@
 
 
             <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Your digital librarian.
+"
+                android:textSize="40sp" />
+
+            <TextView
                 android:id="@+id/textView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:textStyle="italic"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
-                android:text="Username et Toast for wrong pass Password et Signin button Signup button No of attempts countdown disable signin Double click to close Vibrate for wrong pass Shared lib for last entered pass Forgot password Icons for username pass SignUp.java=signup page Username et Password passtext Confirm password passtext Email auth et Number nu"
+                android:text="Stay connected to your business, no matter where you are.Update resource info, approve book requests, and connect with members on the go.
+
+"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Register button and navigate back to login page if successful Toast for registration successful now you can login,unsuccessful Vibrate for wrong pass HomePage.java=main page contains recycler view of all books Navigation drawer Username photo issued Returned Due Fine Add books Registered people logout Toolbar Settings Account"
+                android:textStyle="italic"
+                android:text="Whether it's a book, journal, newspaper, or magazine enter details like the title, author, status, publisher’s name to add the resource to a central database.
+
+"
                 android:textSize="20sp" />
+
             <TextView
                 android:layout_width="match_parent"
+                android:textStyle="italic"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="hgjgj"/>
+android:text="Need to enroll a new Admin? Just fill in their name, mobile number, and email address. With the powerful reporting feature, librarians can easily manage member details, keep track of borrowed books, and filter data by specifics like names or the issue status.
+
+"                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textStyle="italic"
+                android:layout_height="wrap_content"
+                android:text="Members can use the app to request new books. Requests are recorded. The librarian can update the status of books, based on the availability of the books."                android:textSize="20sp" />
+
 
 
         </LinearLayout>

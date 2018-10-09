@@ -9,7 +9,7 @@
             android:icon="@drawable/ic_web_asset_black_24dp">
         </item>
         <item android:id="@+id/returned"
-            android:title="Returned"
+            android:title="Return"
             android:icon="@drawable/ic_keyboard_return_black_24dp">
         </item>
         <item

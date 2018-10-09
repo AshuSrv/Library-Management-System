@@ -22,7 +22,7 @@
             app:showAsAction="never">
         </item>
         <item android:id="@+id/help"
-            android:title="Help"
+            android:title="Info"
             app:showAsAction="never">
         </item>
     </group>

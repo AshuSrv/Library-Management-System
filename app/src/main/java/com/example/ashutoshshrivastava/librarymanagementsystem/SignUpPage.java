@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpPage extends AppCompatActivity {
 
-    EditText regName,regEmail,regPass,confPass,mobnumber;
+    EditText regName,regEmail,regPass,confPass,mobnumber,key;
     Button register;
     private FirebaseAuth firebaseAuth;
 
@@ -33,6 +33,7 @@ public class SignUpPage extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up_page);
 
         regName=findViewById(R.id.regName);
+        key=findViewById(R.id.key);
         regEmail=findViewById(R.id.regEmail);
         regPass=findViewById(R.id.regPass);
         confPass=findViewById(R.id.confirm_pass);
@@ -45,33 +46,42 @@ public class SignUpPage extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
         register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name=regName.getText().toString().trim();
-                String CapemailText = regEmail.getText().toString().trim();
-                 String  emailText =CapemailText.toLowerCase();
-                String passwordText = regPass.getText().toString().trim();
-                String retypedPassText = confPass.getText().toString().trim();
-                String mobnumberText = mobnumber.getText().toString().trim();
+                                        @Override
+                                        public void onClick(View v) {
 
-                if (passwordText.equals(retypedPassText)&&name.compareTo("")!=0&&emailText.compareTo("")!=0&&mobnumberText.compareTo("")!=0) {
-                    performSignup(emailText, passwordText);
 
-                    String id=databaseBooks.push().getKey();
-                    UsersClass usersClass=new
-                            UsersClass(name,emailText,mobnumberText);
-                    databaseBooks.child(id).setValue(usersClass);
+                                            if (key.getText().toString().trim().compareTo("QWERTY@123")==0) {
+                                                String name = regName.getText().toString().trim();
+                                                String CapemailText = regEmail.getText().toString().trim();
+                                                String emailText = CapemailText.toLowerCase();
+                                                String passwordText = regPass.getText().toString().trim();
+                                                String retypedPassText = confPass.getText().toString().trim();
+                                                String mobnumberText = mobnumber.getText().toString().trim();
 
-                    Toast.makeText(SignUpPage.this,"User Added",Toast.LENGTH_SHORT).show();
+                                                if (passwordText.equals(retypedPassText) && name.compareTo("") != 0 && emailText.compareTo("") != 0 && mobnumberText.compareTo("") != 0) {
+                                                    performSignup(emailText, passwordText);
 
-                    Intent intent=new Intent(SignUpPage.this,LoginPage.class);
-                    intent.putExtra("name",name);
-                    startActivity(intent);
-                } else {
-                    showError("Please enter same password and enter all the fields");
-                }
-            }
-        });
+                                                    String id = databaseBooks.push().getKey();
+                                                    UsersClass usersClass = new
+                                                            UsersClass(name, emailText, mobnumberText);
+                                                    databaseBooks.child(id).setValue(usersClass);
+
+                                                    Toast.makeText(SignUpPage.this, "User Added", Toast.LENGTH_SHORT).show();
+
+                                                    Intent intent = new Intent(SignUpPage.this, LoginPage.class);
+                                                    intent.putExtra("name", name);
+                                                    startActivity(intent);
+                                                } else {
+                                                    showError("Please enter same password and enter all the fields");
+                                                }
+                                            }
+
+                                            else {
+                                                Toast.makeText(SignUpPage.this,"Key is not matching, enter the correct key",Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    }
+        );
     }
 
 

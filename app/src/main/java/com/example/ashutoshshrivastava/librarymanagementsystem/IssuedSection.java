@@ -26,7 +26,7 @@ public class IssuedSection extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<Books> list;
     powerConnection receiver = new powerConnection();
-
+    Boolean doubleBackToExitPressedOnce = true;
     EditText searchNamereissue,reissuerNme;
     Button updatereissue,searchreissue;
 
@@ -136,6 +136,14 @@ public class IssuedSection extends AppCompatActivity {
         ifilter.addAction(Intent.ACTION_POWER_DISCONNECTED);
         registerReceiver(receiver, ifilter);
 
+    }
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            Intent intent=new Intent(IssuedSection.this,HomePage.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
 

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/bacgroundtheme"
+    android:background="@drawable/unn"
     android:layout_height="160dp">
 
 
@@ -30,7 +30,7 @@
 
     <TextView
         android:id="@+id/rating"
-        android:layout_width="60dp"
+        android:layout_width="55dp"
         android:layout_height="20dp"
         android:layout_marginTop="120dp"
         android:text="Rating:"
@@ -66,7 +66,7 @@
         android:layout_width="60dp"
         android:layout_height="20dp"
         android:layout_alignBottom="@+id/rating"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="54dp"
         android:layout_marginBottom="-1dp"
         android:layout_toRightOf="@id/rating"
         android:text="Genre :"
@@ -99,7 +99,7 @@
 
     <TextView
         android:id="@+id/rate"
-        android:layout_width="40dp"
+        android:layout_width="52dp"
         android:layout_height="20dp"
         android:textStyle="bold"
         android:layout_marginTop="120dp"
